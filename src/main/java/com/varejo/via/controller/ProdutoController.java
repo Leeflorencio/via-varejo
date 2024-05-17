@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/compra-produto")
+@RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
     ProdutoService service;
 
-    @PostMapping("/teste-cadastro")
+    @PostMapping("/cadastro")
     public ResponseEntity<Object> cadastrar(@RequestBody ProdutoDto produto){
         return service.cadastrarProduto(produto);
     }
