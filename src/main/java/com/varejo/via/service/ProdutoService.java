@@ -30,6 +30,8 @@ public class ProdutoService implements ProdutoServiceImpl {
     @Autowired
     RestTemplateConfig restTemplate;
 
+    private static final String BASE_URL = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json";
+
     @Override
     public ResponseEntity<Object> cadastrarProduto(ProdutoDto produto) {
 
@@ -41,8 +43,6 @@ public class ProdutoService implements ProdutoServiceImpl {
         return ResponseEntity.status(HttpStatus.CREATED).body("Produto cadastrado com sucesso");
     }
 
-    private static final String BASE_URL = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json";
-
     public double getSelicAcumulada() {
         LocalDate endDate = LocalDate.now();
         LocalDate startDate = endDate.minusDays(30);
@@ -53,7 +53,7 @@ public class ProdutoService implements ProdutoServiceImpl {
                 startDate.format(formatter),
                 endDate.format(formatter));
 
-        String response = restTemplate.getForObject(url, String.class);
+        String response = restTemplate.getForObject(url, String.class); //solicitação HTTP GET
 
         ObjectMapper objectMapper = new ObjectMapper();
         try {
