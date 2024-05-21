@@ -1,7 +1,6 @@
 package com.varejo.via.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.varejo.via.dto.CondicaoPagamento;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

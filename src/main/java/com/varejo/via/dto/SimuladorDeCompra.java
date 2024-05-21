@@ -4,13 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CondicaoPagamento {
+public class SimuladorDeCompra {
 
-    private BigDecimal valorEntrada;
-    private Integer quantidadeParcelas;
+    private ProdutoDto produto;
+    private CondicaoPagamentoDto condicaoPagamento;
 }

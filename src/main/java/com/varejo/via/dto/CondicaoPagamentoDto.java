@@ -9,9 +9,8 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProdutoDto {
+public class CondicaoPagamentoDto {
 
-    private Integer codigo;
-    private String nome;
-    private double valor;
+    private double valorEntrada;
+    private Integer quantidadeParcelas;
 }
